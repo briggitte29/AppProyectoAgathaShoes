@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".views.fragments.CompraFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/productos"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Producto(s)"
+            android:textSize="18sp"
+            android:fontFamily="sans-serif-black"
+            android:layout_margin="16dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            />
+
+        <TextView
+            android:id="@+id/items_carrito"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/productos"
+            android:layout_marginHorizontal="16dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="10dp"
+            android:text="none"
+            />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnMapa"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/items_carrito"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:text="Hubicacion"
+            android:textSize="15sp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="16dp"
+            style="@style/Widget.Material3.Button.TextButton.Icon"
+            android:tooltipText="Verificar Hubicacion"
+            />
+
+        <!--<include
+            android:id="@+id/inc_mapa"
+            layout="@layout/fragment_mapa"
+            android:layout_width="match_parent"
+            android:layout_height="350dp"
+            app:layout_constraintTop_toBottomOf="@id/btnMapa"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>-->
+
+        <TextView
+            android:id="@+id/datos"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Datos de Envio"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/btnMapa"
+            android:layout_margin="16dp"
+            android:textSize="18sp"
+            android:fontFamily="sans-serif-black"/>
+
+
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cuadro"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            app:cardElevation="5dp"
+            android:elevation="1dp"
+            app:strokeColor="@color/bonito"
+            app:layout_constraintTop_toBottomOf="@id/datos"
+            >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/ped_distrito"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Distrito"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginHorizontal="16dp"
+                    app:errorEnabled="true">
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/txtDistrito"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="text"
+                        android:textSize="12sp"
+                        />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/ped_direccion"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Direccion"
+                    android:layout_marginHorizontal="16dp"
+                    app:errorEnabled="true">
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/txtDireccion"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="text"
+                        android:textSize="12sp"
+                        />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/ped_departamento"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Departamento/Piso"
+                    android:layout_marginVertical="10dp"
+                    android:layout_marginHorizontal="16dp"
+                    app:errorEnabled="true">
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/txtDepartamento"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="12sp"
+                        android:inputType="text"
+                        />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/ped_referencia"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Referencia Opcional"
+                    android:layout_marginHorizontal="16dp"
+                    app:errorEnabled="true"
+                    >
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/txtReferencia"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="12sp"
+                        android:inputType="text"
+                        />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnCargarDireccion"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Direccion anterior"
+                    android:enabled="false"
+                    android:textSize="12sp"
+                    android:layout_gravity="end"
+                    android:layout_marginEnd="16dp"
+                    style="@style/Widget.Material3.Button.TextButton"/>
+
+            </LinearLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <TextView
+            android:id="@+id/fecha"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Fecha Entrega (Presionar)"
+            app:layout_constraintTop_toBottomOf="@id/cuadro"
+            android:layout_margin="16dp"
+            android:fontFamily="sans-serif-black"
+            android:textSize="18sp"
+            />
+
+        <TextView
+            android:id="@+id/pedidoFecha"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#9E333333"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            app:layout_constraintTop_toBottomOf="@id/fecha"
+            android:layout_marginTop="10dp"
+            android:layout_marginHorizontal="16dp"
+            android:padding="10dp"
+            android:enabled="false"
+            android:text="Fecha Pedido"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        <TextView
+            android:id="@+id/entregaFecha"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:textColor="#9E333333"
+            android:textSize="18sp"
+            app:layout_constraintTop_toBottomOf="@id/pedidoFecha"
+            android:layout_marginTop="10dp"
+            android:layout_marginHorizontal="16dp"
+            android:padding="10dp"
+            android:hint="Fecha Entrega"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnContinuarCompra"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/entregaFecha"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginVertical="16dp"
+            android:text="Comprar Producto"
+            android:textSize="12sp"
+            />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.core.widget.NestedScrollView>
